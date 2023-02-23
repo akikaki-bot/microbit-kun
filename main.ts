@@ -18,9 +18,9 @@ if (input.pinIsPressed(TouchPin.P0)) {
 }
 function GameClear () {
     const bombs = RandomBombs(difficult)
-displayLEDs = 25
+    const displayLEDs = 25
     console.log(`ALLDISPLAY * ${displayLEDs} ALLBOMBS * ${bombs} ALLOK * ${BombsCountUp}`)
-if (BombsCountUp >= displayLEDs - Bombs) {
+if (BombsCountUp >= displayLEDs - bombs) {
         basic.showString("Game Clear!!! Thanks for playing!")
     }
 }
@@ -167,7 +167,7 @@ let defY = 4
 X = 2
 Y = 4
 player = game.createSprite(defX, defY)
-let difficult = "hard"
+let difficult : Difficult = "hard"
 type Difficult = "easy"|"normal"|"hard"|"debug"
 function RandomBombs(difficult : Difficult): number{
     let BombsCount : number = 0
